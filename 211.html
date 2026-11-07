@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Колгу Микяиль</title>
+<meta name="theme-color" content="#ff6e3e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;900&family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fff4ea; --ink:#1a1410; --muted:#6b5d52; --line:#1a141024; --accent:#ff6e3e; --on-accent:#1a1410; --chip:#ffe3d2;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth;color-scheme:light}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,sans-serif;font-size:18px;line-height:1.55}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+h1,h2{font-family:"Unbounded","Arial Black",sans-serif;margin:0;line-height:1.02;letter-spacing:-.03em}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font-family:"Unbounded",sans-serif;font-weight:900;font-size:22px;text-decoration:none;color:var(--ink)}
+.logo b{color:var(--accent)}
+nav div{display:flex;gap:22px}
+nav a:not(.logo){color:var(--ink);text-decoration:none;font-weight:700;font-size:16px}
+.badge{display:inline-block;background:var(--accent);color:var(--on-accent);font-weight:700;font-size:15px;padding:8px 16px;border-radius:99px}
+.hero{padding:48px 0 40px}
+.hero h1{font-weight:900;font-size:clamp(46px,13vw,132px);margin-top:22px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{max-width:36ch;font-size:clamp(19px,2.6vw,24px);color:var(--muted);margin:26px 0 0}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.chip{background:var(--chip);border:1.5px solid var(--line);padding:9px 16px;border-radius:99px;font-weight:700;font-size:16px}
+.chip::before{content:"+";color:var(--accent);margin-right:4px}
+.ticker{overflow:hidden;background:var(--accent);color:var(--on-accent);padding:16px 0;margin:40px 0;white-space:nowrap;font-family:"Unbounded",sans-serif;font-weight:900;font-size:22px;transform:rotate(-1.2deg)}
+.ticker span{display:inline-block;animation:run 24s linear infinite}
+@keyframes run{to{transform:translateX(-50%)}}
+h2{font-weight:900;font-size:clamp(30px,6vw,56px);margin:72px 0 28px}
+.row{display:grid;grid-template-columns:1fr 1.3fr;gap:20px;padding:26px 0;border-top:1.5px solid var(--line)}
+.row:last-child{border-bottom:1.5px solid var(--line)}
+.row h3{margin:0;font-family:"Unbounded",sans-serif;font-size:clamp(20px,3vw,28px);letter-spacing:-.02em}
+.row p{margin:0;color:var(--muted)}
+.langs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.lang{border:1.5px solid var(--line);border-radius:24px;padding:22px;background:var(--chip)}
+.lang b{display:block;font-family:"Unbounded",sans-serif;font-size:22px}
+.lang span{display:inline-block;margin-top:12px;background:var(--accent);color:var(--on-accent);padding:5px 14px;border-radius:99px;font-weight:700;font-size:15px}
+.ps{margin:44px 0 0;color:var(--muted);font-size:17px}
+.contact{background:var(--accent);color:var(--on-accent);border-radius:36px;padding:44px 32px;margin:72px 0 0}
+.contact h2{margin:0 0 24px}
+.links{display:flex;flex-wrap:wrap;gap:12px}
+.links a{background:var(--on-accent);color:#fff4ea;text-decoration:none;font-weight:700;padding:15px 26px;border-radius:99px}
+.links a:hover{transform:translateY(-3px)}
+.links a{transition:transform .15s}
+a:focus-visible{outline:4px solid var(--ink);outline-offset:3px}
+footer{display:flex;justify-content:space-between;padding:36px 0 56px;color:var(--muted);font-size:15px}
+@media (max-width:620px){.row{grid-template-columns:1fr}nav div{gap:14px}.contact{padding:32px 22px}}
+@media (prefers-reduced-motion:reduce){.ticker span{animation:none}.links a{transition:none}html{scroll-behavior:auto}}
+
+.ticker button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0 .35em;transition:transform .15s}
+.ticker button:hover,.ticker button:focus-visible{transform:scale(1.15) rotate(-3deg);text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:6px}
+.ticker i{font-style:normal}
+.ticker:hover span{animation-play-state:paused}
+.chip{font-family:inherit;color:var(--ink);cursor:pointer;transition:background .15s,transform .15s}
+.chip:hover,.chip:focus-visible{background:var(--accent);color:var(--on-accent);transform:translateY(-3px)}
+.row{cursor:pointer;border-radius:0;transition:background .2s,padding .2s,border-radius .2s}
+.row:hover,.row.on{background:var(--accent);padding-left:20px;padding-right:20px;border-radius:22px}
+.row:hover h3,.row.on h3,.row:hover p,.row.on p{color:var(--on-accent)}
+.lang{transition:transform .2s}
+.lang:hover{transform:translateY(-5px) rotate(-1deg)}
+.pulse .lang{animation:pop .7s ease 2}
+@keyframes pop{50%{transform:scale(1.05) rotate(-1.5deg);background:var(--accent)}}
+@media (prefers-reduced-motion:reduce){.pulse .lang{animation:none}.chip,.row,.lang,.ticker button{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="logo" href="#top">колгу<b>.</b></a>
+    <div><a href="#about">Обо мне</a><a href="#langs">Языки</a><a href="#contact">Связаться</a></div>
+  </nav>
+
+  <header class="hero" id="top">
+    <span class="badge">Готовлюсь к IELTS и SAT</span>
+    <h1>Колгу Микяиль<em>.</em></h1>
+    <p>Музыка, спорт и учёба. Многосторонний и всегда в движении.</p>
+    <div class="chips"><button class="chip" data-go="r-music">Музыка</button><button class="chip" data-go="r-voice">Вокал</button><button class="chip" data-go="r-sport">Спорт</button><button class="chip" data-go="r-exam">IELTS</button><button class="chip" data-go="r-exam">SAT</button></div>
+  </header>
+</div>
+
+<div class="ticker"><span id="tk"></span></div>
+
+<div class="wrap">
+  <h2 id="about">Чем занимаюсь</h2>
+  <div>
+    <div class="row" id="r-music" tabindex="0" role="button"><h3>Играю на инструменте</h3><p>Музыка для меня не хобби на выходных, а часть дня.</p></div>
+    <div class="row" id="r-voice" tabindex="0" role="button"><h3>Пою</h3><p>Голос — ещё один способ заниматься музыкой.</p></div>
+    <div class="row" id="r-sport" tabindex="0" role="button"><h3>Спорт</h3><p>Силовые, бег и командные игры.</p></div>
+    <div class="row" id="r-exam" tabindex="0" role="button"><h3>IELTS и SAT</h3><p>Готовлюсь каждый день, чтобы учиться за рубежом.</p></div>
+  </div>
+
+  <h2 id="langs">Языки</h2>
+  <div class="langs" id="lang-cards">
+    <div class="lang"><b>Русский</b><span>родной</span></div>
+    <div class="lang"><b>Türkçe</b><span>родной</span></div>
+    <div class="lang"><b>English</b><span>B2</span></div>
+    <div class="lang"><b>Қазақша</b><span>A2</span></div>
+  </div>
+  <p class="ps">P.S. Уровни честные, и я продолжаю их подтягивать.</p>
+
+  <section class="contact" id="contact">
+    <h2>Напишите мне.</h2>
+    <div class="links">
+      <a href="https://t.me/kolgumladshii">Telegram</a>
+      <a href="mailto:barrelanimal540@gmail.com">Почта</a>
+      <a href="https://instagram.com/kolgumladshii">Instagram</a>
+    </div>
+  </section>
+
+  <footer><span class="logo" style="font-size:18px">колгу<b>.</b></span><span>© 2026 Колгу Микяиль</span></footer>
+</div>
+<script>
+var W=[["МУЗЫКА","r-music"],["СПОРТ","r-sport"],["IELTS","r-exam"],["SAT","r-exam"],["ЯЗЫКИ","lang-cards"]];
+var unit=W.map(function(w){return '<button data-go="'+w[1]+'">'+w[0]+'</button><i>✳</i>'}).join('');
+document.getElementById('tk').innerHTML=unit.repeat(6);
+function go(id){
+  var el=document.getElementById(id); if(!el) return;
+  document.querySelectorAll('.row.on').forEach(function(r){r.classList.remove('on')});
+  el.scrollIntoView({behavior:'smooth',block:'center'});
+  if(el.classList.contains('row')){el.classList.add('on')}
+  else{el.classList.add('pulse');setTimeout(function(){el.classList.remove('pulse')},1500)}
+}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('[data-go]'); if(b){go(b.getAttribute('data-go'));return}
+  var r=e.target.closest('.row'); if(r){r.classList.toggle('on')}
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Enter'||e.key===' '){var r=e.target.closest&&e.target.closest('.row'); if(r){e.preventDefault();r.classList.toggle('on')}}
+});
+</script>
+</body>
+</html>
